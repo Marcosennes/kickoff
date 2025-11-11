@@ -3,7 +3,7 @@ import Brasileirao from './components/Brasileirao'
 // Importar meu componente MyCard
 export function App() {
   return (
-    <div className="p-10 flex justify-center">
+    <div className="p-10 flex justify-end">
       <Brasileirao />
       {/* <MyCard></MyCard> */}
     </div>

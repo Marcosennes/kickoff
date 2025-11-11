@@ -32,7 +32,7 @@ export function Match({
   awayTeam,
 }: MatchProps) {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm h-30">
       <CardHeader>
         <CardTitle>
           {/* row */}
@@ -47,13 +47,9 @@ export function Match({
             </div>
           </div>
         </CardTitle>
-        <CardDescription>
-        </CardDescription>
-        <CardAction>
-        </CardAction>
       </CardHeader>
       <CardContent>
-        <div className="flex items-center justify-center gap-4 text-xl font-bold">
+        <div className="flex items-center justify-center align-top gap-4 text-xl font-bold">
           <div>
             <img src={homeTeam.crest} alt={`${homeTeam.name} crest`} className="inline-block w-6 h-6 ml-2" />
           </div>

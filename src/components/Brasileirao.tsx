@@ -44,7 +44,9 @@ export default function Brasileirao() {
   if (loading) return <p>Carregando partidas...</p>;
 
   return (
-    <div className="p-4">
+    // background vermelho
+    // aumentar width 
+    <div className="p-4 w-96">
       <h2 className="text-lg font-bold mb-3">Últimos Jogos do Brasileirão</h2>
       <ul className="space-y-3">
         {matches.map((match) => (
