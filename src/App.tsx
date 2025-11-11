@@ -5,7 +5,7 @@ export function App() {
   return (
     <div className="p-10 flex justify-center">
       <Brasileirao />
-      <MyCard></MyCard>
+      {/* <MyCard></MyCard> */}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Match } from "@/my-components/Match";
 interface Team {
   name: string;
 }
@@ -48,14 +48,27 @@ export default function Brasileirao() {
       <h2 className="text-lg font-bold mb-3">Últimos Jogos do Brasileirão</h2>
       <ul className="space-y-3">
         {matches.map((match) => (
-          <li key={match.id} className="border rounded-lg p-3">
-            <div className="font-semibold">
-              {match.homeTeam.name} {match.score.fullTime.home} - {match.score.fullTime.away} {match.awayTeam.name}
-            </div>
-            <div className="text-sm text-gray-600">
-              {new Date(match.utcDate).toLocaleDateString("pt-BR")}
-            </div>
-          </li>
+          <Match
+            id={1}
+            homeTeam={match.homeTeam}
+            awayTeam={match.awayTeam}
+            score={match.score}
+            utcDate={match.utcDate}
+          />
+          // <li key={match.id} className="border rounded-lg p-3">
+          //   <div className="font-semibold">
+          //     <img src={match.homeTeam.crest} alt={`${match.homeTeam.name} crest`} className="inline-block w-6 h-6 ml-2" />
+          //     <div className="inline-block mx-2 pt-2">
+          //       <span>{match.score.fullTime.home}</span>
+          //       <span>X</span>
+          //       <span>{match.score.fullTime.away}</span>
+          //     </div>
+          //     <img src={match.awayTeam.crest} alt={`${match.awayTeam.name} crest`} className="inline-block w-6 h-6 ml-2" />
+          //   </div>
+          //   <div className="text-sm text-gray-600">
+          //     {new Date(match.utcDate).toLocaleDateString("pt-BR")}
+          //   </div>
+          // </li>
         ))}
       </ul>
     </div>
