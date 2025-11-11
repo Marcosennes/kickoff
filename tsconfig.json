@@ -1,0 +1,12 @@
+// tsconfig.json (na raiz)
+{
+  "compilerOptions": {
+    // ... outras configs
+    "baseUrl": ".", // <--- Adicione ou garanta
+    "paths": {
+      "@/*": ["./src/*"] // <--- Adicione
+    },
+    "jsx": "react-jsx" // <--- Este sinalizador é crucial
+  }
+  // ...
+}
