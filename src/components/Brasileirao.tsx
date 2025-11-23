@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Match } from "@/my-components/Match";
+import { MyTable } from "@/my-components/MyTable";
 interface Team {
   name: string;
 }
@@ -66,11 +67,11 @@ export default function Brasileirao() {
     // background vermelho
     // aumentar width 
     <div className="p-4 w-96">
-      <h2 className="text-lg font-bold mb-3">Últimos Jogos do Brasileirão</h2>
+      <h2 className="text-lg text-center font-bold mb-3">Últimos Jogos do Brasileirão</h2>
       <ul className="space-y-3">
-        <div>
+        {/* <div>
           <span>{JSON.stringify(teams)}</span>
-        </div>
+        </div> */}
         {matches.map((match) => (
           <div>
             {/* <span>{JSON.stringify(match)}</span> */}

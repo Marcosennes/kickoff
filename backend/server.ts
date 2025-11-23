@@ -2,6 +2,8 @@ import * as express from "express";
 import * as cors from "cors";
 import * as dotenv from "dotenv";
 
+// npx ts-node server.ts
+
 dotenv.config();
 
 console.log("Token carregado:", process.env.FOOTBALL_TOKEN);
