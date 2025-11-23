@@ -34,9 +34,9 @@ export function Match({
   return (
     <Card className="w-full max-w-sm h-30">
       <CardHeader>
-        <CardTitle>
+        <CardTitle >
           {/* row */}
-          <div className="mb-3 flex flex-row justify-between gap-8">
+          <div className="mb-3 flex flex-row justify-between">
             <div>
               <span className="text-sm">Maracanã</span>
             </div>
@@ -51,11 +51,11 @@ export function Match({
       <CardContent>
         <div className="flex items-center justify-center align-top gap-4 text-xl font-bold">
           <div>
-            <img src={homeTeam.crest} alt={`${homeTeam.name} crest`} className="inline-block w-6 h-6 ml-2" />
+            <img src={homeTeam.crest} alt={`${homeTeam.name} crest`} className="inline-block w-6 h-6 ml-2" style={{ width:'40px', height: 'auto' }} />
           </div>
           {score.fullTime.home} X {score.fullTime.away}
           <div>
-            <img src={awayTeam.crest} alt={`${awayTeam.name} crest`} className="inline-block w-6 h-6 ml-2" />
+            <img src={awayTeam.crest} alt={`${awayTeam.name} crest`} className="inline-block w-6 h-6 ml-2" style={{ width:'40px', height: 'auto' }} />
           </div>
         </div>
       </CardContent>

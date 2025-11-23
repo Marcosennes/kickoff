@@ -20,8 +20,15 @@ interface Match {
   score: Score;
 }
 
+interface Team {
+  id: number;
+  name: string;
+  crest: string;
+}
+
 export default function Brasileirao() {
   const [matches, setMatches] = useState<Match[]>([]);
+  const [teams, setTeams] = useState<Team[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -37,8 +44,20 @@ export default function Brasileirao() {
         setLoading(false);
       }
     };
+    const fetchTeams = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/api/brasileirao/teams");
+        const data = await res.json();
+        setTeams(data.teams || []);
+      } catch (err) {
+        console.error("Erro ao buscar times:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
     fetchMatches();
+    fetchTeams();
   }, []);
 
   if (loading) return <p>Carregando partidas...</p>;
@@ -49,14 +68,20 @@ export default function Brasileirao() {
     <div className="p-4 w-96">
       <h2 className="text-lg font-bold mb-3">Últimos Jogos do Brasileirão</h2>
       <ul className="space-y-3">
+        <div>
+          <span>{JSON.stringify(teams)}</span>
+        </div>
         {matches.map((match) => (
-          <Match
-            id={1}
-            homeTeam={match.homeTeam}
-            awayTeam={match.awayTeam}
-            score={match.score}
-            utcDate={match.utcDate}
-          />
+          <div>
+            {/* <span>{JSON.stringify(match)}</span> */}
+            <Match
+              id={1}
+              homeTeam={match.homeTeam}
+              awayTeam={match.awayTeam}
+              score={match.score}
+              utcDate={match.utcDate}
+            />
+          </div>
           // <li key={match.id} className="border rounded-lg p-3">
           //   <div className="font-semibold">
           //     <img src={match.homeTeam.crest} alt={`${match.homeTeam.name} crest`} className="inline-block w-6 h-6 ml-2" />

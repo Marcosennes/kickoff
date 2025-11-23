@@ -42,4 +42,28 @@ app.get("/api/brasileirao", async (_req, res) => {
   }
 });
 
+app.get("/api/brasileirao/teams", async (_req, res) => {
+  console.log("🔹 Requisição recebida /api/brasileirao/teams");
+  console.log("Token usado:", TOKEN);
+
+  try {
+    const response = await fetch(
+      "https://api.football-data.org/v4/competitions/BSA/teams",
+      {
+        headers: { "X-Auth-Token": TOKEN },
+      }
+    );
+
+    console.log("Status da resposta da API:", response.status);
+    console.log("Headers da resposta da API:", response.headers.get("content-type"));
+
+    const data = await response.json();
+    console.log("Dados recebidos da Football-Data.org:", data);
+
+    res.json(data);
+  } catch (err) {
+    console.error("Erro ao buscar partidas:", err);
+    res.status(500).json({ error: "Erro ao buscar partidas" });
+  }
+});
 app.listen(PORT, () => console.log(`✅ Servidor rodando em http://localhost:${PORT}`));
