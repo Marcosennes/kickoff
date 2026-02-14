@@ -73,7 +73,11 @@ export default defineConfig([
 ```
 
 ## To Start Dev
-
+# Execute in main folder to start React project
 - npm run dev
 
+# If necessary change the node version
 - execute 'nvm list' and 'nvm use NODE_VERSION'
+
+# To execute backend run inside backend folder
+- npx ts-node server.ts

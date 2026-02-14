@@ -2,7 +2,14 @@ import * as express from "express";
 import * as cors from "cors";
 import * as dotenv from "dotenv";
 
-// npx ts-node server.ts
+/*
+|-----------------------------------------------
+| To Execute
+|-----------------------------------------------
+|
+| npx ts-node server.ts
+|
+*/
 
 dotenv.config();
 
